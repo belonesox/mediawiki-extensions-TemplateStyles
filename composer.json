@@ -1,7 +1,9 @@
 {
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"wikimedia/css-sanitizer": "~1.0.6"
+		"cssjanus/cssjanus": "1.2.0",
+        	"wikimedia/css-sanitizer": "~1.0.6",
+		"mcaskill/composer-exclude-files": "^1.1"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
@@ -9,7 +11,13 @@
 		"jakub-onderka/php-console-highlighter": "0.3.2",
 		"mediawiki/minus-x": "0.3.1"
 	},
-	"scripts": {
+    "exclude-from-classmap": ["/wikimedia/at-ease/src/MediaWiki/"],
+    "autoload": {
+        "exclude-from-files": [
+            "/wikimedia/at-ease/src/MediaWiki/Functions.php"
+        ]    
+    },
+    "scripts": {
 		"fix": [
 			"phpcbf",
 			"minus-x fix ."
