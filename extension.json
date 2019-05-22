@@ -13,7 +13,7 @@
 	"manifest_version": 1,
 	"load_composer_autoloader": true,
 	"requires": {
-		"MediaWiki": ">= 1.31.0"
+		"MediaWiki": ">= 1.26.4"
 	},
 	"MessagesDirs": {
 		"TemplateStyles": [
