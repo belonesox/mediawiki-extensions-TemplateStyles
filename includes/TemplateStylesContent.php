@@ -128,7 +128,9 @@ class TemplateStylesContent extends TextContent {
 
 		// Inject our warnings into the resulting ParserOutput
 		$po = parent::getParserOutput( $title, $revId, $options, $generateHtml );
-		$status = $this->sanitize( [ 'novalue' => true, 'class' => $options->getWrapOutputClass() ] );
+        // $status = $this->sanitize( [ 'novalue' => true, 'class' => $options->getWrapOutputClass() ] );
+        $status = $this->sanitize( [ 'novalue' => true, 'class' => 'mw-parser-output' ] );
+
 		foreach ( $status->getErrors() as $error ) {
 			$po->addWarning(
 				Message::newFromSpecifier( array_merge( [ $error['message'] ], $error['params'] ) )->parse()

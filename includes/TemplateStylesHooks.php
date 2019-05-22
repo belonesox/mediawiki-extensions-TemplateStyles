@@ -258,7 +258,9 @@ class TemplateStylesHooks {
 		}
 
 		// Include any non-default wrapper class in the cache key too
-		$wrapClass = $parser->getOptions()->getWrapOutputClass();
+        // $wrapClass = $parser->getOptions()->getWrapOutputClass();
+        $wrapClass = false;
+
 		if ( $wrapClass === false ) { // deprecated
 			$wrapClass = 'mw-parser-output';
 		}
